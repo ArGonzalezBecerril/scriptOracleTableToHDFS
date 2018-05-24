@@ -1,11 +1,11 @@
-# Script que exporta una tabla de Oracle a
-HDFS
+# Script que exporta una tabla de Oracle a HDFS
 Descripción: El siguiente script tiene como finalidad exportar una tabla de Oracle a HDFS con la cualidad que se
 comprime en formato parquet y se particiona la información por año y mes.
-[![N|Solid](https://trello-
-attachments.s3.amazonaws.com/5a1baed8137a75335503cc3a/5afcd584aa5675f32966baf0/9aedf7c3b929d88d5eafa31d6a7aa0ad
-/oracletoHdsf.PNG)](https://nodesource.com/products/nsolid)
-Directorios
+
+[![N|Solid](https://trello-attachments.s3.amazonaws.com/5a1baed8137a75335503cc3a/5afcd584aa5675f32966baf0/9aedf7c3b929d88d5eafa31d6a7aa0ad/oracletoHdsf.PNG)](https://nodesource.com/products/nsolid)
+
+## Directorios
+
 - **conf:** Contiene una clase escrita en python para poder conectarnos a la base de datos Oracle, adicionalmente se
 debe agregar las columnas que necesitamos exportar y el directorio HDFS donde vamos a almacenar la
 información
