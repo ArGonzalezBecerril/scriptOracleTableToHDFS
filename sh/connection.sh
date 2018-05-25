@@ -23,6 +23,10 @@
      schema_hive=$2
      path_hdfs_data_partition=$3
      commands_scala=$4
+     #Create file that will contains commands scala
+     touch $4 && touch $5
+
+     commands_scala=$4
      tables_oracle=$5
 
      echo "println(\" Exportando y particionando la tabla $table_name_oracle a hdfs\")" >> $commands_scala

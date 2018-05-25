@@ -4,7 +4,7 @@ class Utilerias:
     init.scala         file with commands scala for partition created and data save
     tables_oracle.txt  contain all tables exported from oracle to hdfs
     """
-    filename_command_scala = "init.scala"
+    filename_command_scala = "../init.scala"
     tables_exported = "tables_oracle.txt"
 
     def __init__(self, scala_commands, tables_exported):
