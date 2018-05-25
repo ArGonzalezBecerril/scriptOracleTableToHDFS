@@ -7,13 +7,6 @@ set -e
 #Remove temp files
 rm init.scala && rm sh/tables_oracle.txt
 
-#Create file temporary init.scala and tables_oracle.txt
-scala_connection="init.scala"
-tables_exported="tables_oracle.txt"
-
-touch ../${scala_connection} && touch ${tables_exported}
-
-
 #Call script in python
 echo "Exportando las tablas de oracle hive"
 python import_oracle_to_hive.py

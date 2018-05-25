@@ -8,4 +8,3 @@ else
     echo "Fallo al lanzar el comando, $output"
 fi
 
-#hive -e "drop table $1"

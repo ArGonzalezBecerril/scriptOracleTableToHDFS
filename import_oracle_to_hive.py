@@ -1,5 +1,7 @@
 from conf.connections import Conexion
 from conf.utils import Utilerias
+import sys
+import getopt
 import subprocess
 
 '''
@@ -91,6 +93,7 @@ def drop_table_hive_temp(conn, table):
 # Get new connection
 connection = Conexion
 util = Utilerias
+
 
 is_empty = is_attribute_empty(connection)
 tables_oracle = connection.table_name_oracle.split(",")
