@@ -62,20 +62,20 @@ password=${7}
 table=${8}
 columns=${9}
 
-# ************* Informacion de Destino temporal en hive HDFS ***********************************************************
+# ************* INFORMACION DE DESTINO TEMPORAL EN HIVE HDFS ***********************************************************
 path_hdfs_hive=${10}
 schema_hive=${11}
 table_hive=${12} #El nombre origen sera igual al nombre destino.
 
-#  ****************************** Parametros propios de sqoop **********************************************************
+#  ****************************** PARAMETROS PROPIOS DE SQOOP **********************************************************
 split_by=${13}
 number_mappers=${14}
 data_type_columns=${15}
 
 
-########## Script en sqoop para importar datos de oracle a una tabla hive.
+#********* SCRIPT EN SQOOP PARA IMPORTAR DATOS DE ORACLE A UNA TABLA HIVE **********************************************
 sqoop import --connect ${url_jdbc} --username ${user} --password ${password} --table ${table} --columns ${columns} --map-column-hive ${data_type_columns} --warehouse-dir ${path_hdfs_hive} --split-by ${split_by} --hive-import --hive-table ${schema_hive}"."${table} --num-mappers ${number_mappers} --compression-codec org.apache.hadoop.io.compress.SnappyCodec
 
 
-# **********************     Eliminar ficheros temporales, si es que existen ***************************************************
+# **********************     ELIMINAR FICHEROS TEMPORALES, SI ES QUE EXISTEN *******************************************
 remove_all_files_temp "${partition_save_file_tmp};${tables_document_oracle_tmp};${files_java}"
