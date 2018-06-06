@@ -5,16 +5,7 @@
 # Script principal el cual llama a todos los subprocesos en bash
 
 
-# *****************Validar que existan parametros **********************************************************************
-if [ $# -ne 1 ]
-    then
-        print_message "Argumentos incompletos, es necesario el nombre de las tablas"
-        exit 1
-    else
-        list_tables=$1
-fi
 #**************************** FUNCIONES DE USO GENERAL ****************************************************************#
-
 
 function print_message(){
    echo "$1"
@@ -46,7 +37,14 @@ function remove_all_files_temp(){
 
 
 #####################################INICIO ############################################################################
-
+# *****************  Validar que existan parametros ********************************************************************
+if [ $# -ne 1 ]
+    then
+        print_message "Argumentos incompletos, es necesario el nombre de las tablas"
+        exit 1
+    else
+        list_tables=$1
+fi
 
 #***********************************  Fichero temporales ***************************************************************
 
