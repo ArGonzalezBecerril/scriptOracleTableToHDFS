@@ -83,7 +83,7 @@ library_hive='scala/header.scala'
 
 ############## GENERAR EL CODIGO PARA ALMACENAR EN HDFS Y TAMBIEN PARA ENVIAR A ORACLE NUEVAMENTE #####################
 
-sh/save_hdfs_and_write_jdbc.sh ${table} ${schema_hive} ${stored_directory_hdfs} ${processing_to_hdfs} ${exported_tables} ${user_dest} driver=${7} password_dest=${8} url_jdbc_dest=${9} table_dest=${10}
+sh/save_hdfs_and_write_jdbc.sh ${table} ${schema_hive} ${stored_directory_hdfs} ${processing_to_hdfs} ${exported_tables} ${user_dest} ${driver} ${password_dest} ${url_jdbc_dest} ${table_dest}
 
 ##########################  INVOCAR EL SHELL DE SPARK PARA ENVIAR LOS DATOS DE HDFS A ORACLE. ##########################
 
