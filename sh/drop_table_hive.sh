@@ -1,6 +1,11 @@
 #!/bin/bash
 
-#This script require 1 argument (table name hive)
+#Author : Arturo Gonzalez Becerril
+#Version: 0.1
+
+#Objetivo del script       : Eliminar una tabla en hive
+#Parametros que recibe     : Nombre de la tabla
+#Forma de invocar el script: ./drop_table_hive.sh nombreDeLaTabla
 
 
 function print_message_highlight(){

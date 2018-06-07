@@ -4,17 +4,24 @@
 #Version: 0.1
 #Parametros
 #
-#  $1   stored_directory_hdfs
-#  $2   partition_save_file_tmp
-#  $3   tables_document_oracle_tmp
-#  $4   files_java
+#  $1   Directorio HDFS donde se almacenaran los datos
+#  $2   Fichero .scala que se construye con base en los parametros que se le pasa como argumentos, este fichero lo tomara un
+#       shell de spark y ejecutara cada linea de código que tenga.
+#  $3   Fichero temporal que contiene una bitacora de las tablas que se estan exportando a HDFS
+#  $4   Es un bean de java que automaticamente crea sqoop para mappear la tabla de oracle a una clase java.
+#  $5   Url JDBC de la conexion origen en oracle
+#  $6   Usuario de la base de datos oracle
+#  $7   Contraseña del usuario
+#  $8   Tabla que se va a exportar
+#  $9   Columnas de la tabla
+#  $10  Directorio HDFS en hive donde se almacenara la información
+#  $11  Esquema donde se depositara la tabla hive
+#  $12  Nombre de la tabla destino en hive(Por defecto tendra la misma que el de origen en oracle)
+#  $13  Se usa para especificar la columna de la tabla utilizada para generar nuevas filas
+#  $14  Numero de Mappers que serán lanzados en el proceso de map-reduce
+#  $15  Tipo de dato de cada columna
 
-
-# ************* Informacion de directorio final donde se almacena al informacion particionada por fecha ***************
-# Ficheros temporales que se construyen en cada ejecucion del script.
-#  - save_partition_file.scala --> Contiene codigo para almacenar en hdfs y particionar la info por anio y mes.
-#  - tables.txt         --> Contiene el nombre de las tablas que se estan exportando de oracle a HDFS.
-
+#Objetivo del script: Exportar una tabla de oracle a HDFS(Hive)
 
 ############################ Funciones de uso general #################################################################
 

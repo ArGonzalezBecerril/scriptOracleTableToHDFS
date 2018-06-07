@@ -5,21 +5,31 @@
 
 # *******************************     Descripcion      *****************************************************************
 # Este script crea codigo en scala con base en los parametros que se le pasa como argumento para
-# migrar la informacion de oracle a hdfs, posteriormente sera invocado por un shell de spark.
+# migrar la informacion de oracle a hdfs, posteriormente se pasara este fichero a un  shell de spark
 #
 # Parametros
-#  Arg 1 - $1 Nombre de la tabla que se va a exportar
-#  Arg 2 - $2 Esquema en hive donde se almacenara la tabla exportada
-#  Arg 3 - $3 Directorio HDFS donde se almacenara la informacion final procesada
-#  Arg 4 - $4 Nombre del fichero que contendra el codigo en scala a ejecutar en un shell de spark
-#  Arg 5 - $5 Este fichero contiene el registro de las tablas que se exportaron a hdfs.
-#
+# - $1 Nombre de la tabla que se va a exportar
+# - $2 Esquema en hive donde se almacenara la tabla exportada
+# - $3 Directorio HDFS donde se almacenara la informacion final procesada
+# - $4 Nombre del fichero que contendra el codigo en scala a ejecutar en un shell de spark
+# - $5 Este fichero contiene el registro de las tablas que se exportaron a hdfs.
+# - $6 Usuario de la Base de datos oracle Destino
+# - $7 Drive jdbc en este caso es el drive de oracle
+# - $8 Contraseña del Usuario
+# - $9 URL jdbc
+# - $10Nombre de la tabla en oracle donde se va a depositar la información
+
 # Objetivo del Script:
 # Es necesario ya que construye un fichero que contiene la logica para leer la tabla y almacenarla particionada por fecha
 # en hadoop adicionalmente se integra la logica para transimitir la informacion a oracle.
-#
-# Tareas que realiza el script
-#
+
+#################################################################
+# Actualizacion:                                                #
+#                                                               #
+# Para esta version se desactiva la linea que almacena en HDFS  #
+#################################################################
+
+
 function print_message(){
    get_date=$(date +"%Y-%m-%d %H:%M:%S,%3N")
    echo "$get_date $1"
