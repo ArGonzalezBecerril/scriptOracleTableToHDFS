@@ -11,32 +11,27 @@ Descripción: El siguiente script tiene como finalidad exportar una o n tablas c
 - **sh:** Módulos escritos en bash el cual realizan tareas pequeñas como eliminar una tabla en hive o invocar un Shell de spark cada uno de estos programas son invocados por el script principal.
 
 ### Especificaciones para hacer uso del script
-**1** -- Antes de ejecutar el script  es necesario configurar los siguientes parámetros de conexión a oracle: (**Todas las variables se encuentran dentro el fichero run.sh**)
-- ***Url_JDBC***
--- Se encuentra como **url_jbc**  debajo del comentario **"Origen de datos"**
-- ***Usuario***
--- Usuario de la base de datos oracle(Nombre de la variable es **user**)
-- ***Password***
--- Constraseña del usuario(Nombre de la variable es **password**)
-- ***Tabla***
--- Nombre de la tabla que se va a exportar a HDFS(Nombre de la variable es **table**)
-- ***Columnas***
---Nombre de las columnas que se van a exportar, cada una debe ir separada por comas: Columna1, Columna2...(Nombre de la variable es **columns**)
-###### **Información de ¿Cómo almacenarlo en Hive?**
+**1** Antes de ejecutar el script  es necesario configurar los siguientes parámetros de conexión a oracle: (**Todas las variables se encuentran dentro el fichero run.sh**)
+- ***Url_JDBC*** Se encuentra como **url_jbc**  debajo del comentario **"Origen de datos"**
+- ***Usuario*** Usuario de la base de datos oracle(Nombre de la variable es **user**)
+- ***Password*** Constraseña del usuario(Nombre de la variable es **password**)
+- ***Tabla*** Nombre de la tabla que se va a exportar a HDFS(Nombre de la variable es **table**)
+- ***Columnas*** Nombre de las columnas que se van a exportar, cada una debe ir separada por comas: Columna1, Columna2...(Nombre de la variable es **columns**)
+##### **Información de ¿Cómo almacenarlo en Hive?**
 Es necesario indicar al script como se almacenara en HDFS la tabla a exportar por ello se debe indicar 3 puntos importantes
-- **Nombre de la tabla destino:** Por default tendrá el mismo nombre de la tabla origen, pero si se desea cambiar el nombre  la variable se llama ***table_hive***
-- **Esquema:** Es importarte indicar el esquema donde se van almacenar las tablas por default es ***sb_crm***)
-- **Directorio HDFS:** Es el directorio en HDFS donde se depositara la tabla, el nombre de la variable es ***path_hdfs_hive***)
+- ***Nombre de la tabla destino:*** Por default tendrá el mismo nombre de la tabla origen, pero si se desea cambiar el nombre  la variable se llama ***table_hive***
+- ***Esquema:*** Es importarte indicar el esquema donde se van almacenar las tablas por default es ***sb_crm***)
+- ***Directorio HDFS:*** Es el directorio en HDFS donde se depositara la tabla, el nombre de la variable es ***path_hdfs_hive***)
 
-###### **Parámetros adicionales en sqoop**
+##### **Parámetros adicionales en sqoop**
 
-- **Split by:** Se usa para especificar la columna de la tabla utilizada para generar nuevas filas.
-- **Mappers:** Numero de Mappers que serán lanzados en el proceso de map-reduce
-- **DataType columns:** Tipo de dato de cada columna
+- ***Split by:*** Se usa para especificar la columna de la tabla utilizada para generar nuevas filas.
+- ***Mappers:*** Numero de Mappers que serán lanzados en el proceso de map-reduce
+- ***DataType columns:*** Tipo de dato de cada columna
 
-**2** -- Clonar el repositorio o descargar las fuentes en formato zip
+**2** Clonar el repositorio o descargar las fuentes en formato zip
 ```sh
-# Pasos para instalar, si clonamos el repositorio
+# Pasos para ejecutar el script **[Run.sh]**
 arturo@arturo$ git clone https://github.com/ArturoGonzalezBecerril/scriptOracleTableToHDFS.git
 arturo@arturo$ ls -lht
 drwxr-xr-x 2 xxxxx domain arturo 4.0K Jun  6 18:52 sh
