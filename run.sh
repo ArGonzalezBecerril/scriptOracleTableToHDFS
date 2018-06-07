@@ -5,7 +5,10 @@
 # Script principal el cual llama a todos los subprocesos en bash
 
 
-#**************************** FUNCIONES DE USO GENERAL ****************************************************************#
+# *********************** Si algun comando falla el script abortara inmediatamente *************************************
+set -e
+
+#**************************** FUNCIONES DE USO GENERAL *****************************************************************
 
 function print_message(){
    echo "$1"
@@ -89,6 +92,7 @@ library_hive='scala/header.scala'
 
 ############## GENERAR EL CODIGO PARA ALMACENAR EN HDFS Y TAMBIEN PARA ENVIAR A ORACLE NUEVAMENTE #####################
 
+#***Este script genera el codigo de ${processing_to_hdfs} el cual sera ejecutado por un shell de spark**
 sh/save_hdfs_and_write_jdbc.sh ${table} ${schema_hive} ${stored_directory_hdfs} ${processing_to_hdfs} ${exported_tables} ${user_dest} ${driver} ${password_dest} ${url_jdbc_dest} ${table_dest}
 
 ##########################  INVOCAR EL SHELL DE SPARK PARA ENVIAR LOS DATOS DE HDFS A ORACLE. ##########################

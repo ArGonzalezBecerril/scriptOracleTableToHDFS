@@ -19,9 +19,7 @@
 ############################ Funciones de uso general #################################################################
 
 function print_message(){
-   verde="\e[92m"
-   default="\e[39m"
-   echo "${verde}${1}${default}"
+   echo "${1}"
 }
 
 
