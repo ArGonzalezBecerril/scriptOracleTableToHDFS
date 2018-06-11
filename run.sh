@@ -49,7 +49,7 @@ if [ $# -ne 1 ]
         list_tables=$1
 fi
 
-#***********************************  Fichero temporales ***************************************************************
+#***********************************  FICHEROS TEMPORALES ***************************************************************
 
 stored_directory_hdfs="/pro/workspace/crm/gestion_clientes"      # $1
 processing_to_hdfs="tmp/processing_to_hdfs.scala"                # $2
@@ -81,7 +81,7 @@ password_dest="Secreta01"                                        # $18
 url_jdbc_dest="jdbc:oracle:thin:@180.181.169.83:1660:pdmanltc"   # $19
 table_dest="GESTION_CLIENTES"                                    # $20
 
-# **************************** PATH DEL SHELL DE SPARK Y LIBRERIAS NESESARIAS ******************************************
+# **************************** PATH DEL SHELL DE SPARK Y LIBRERIAS NECESARIAS ******************************************
 shell_spark='./sh/spark-shell.sh'
 library_hive='scala/header.scala'
 
